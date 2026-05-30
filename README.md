@@ -54,7 +54,7 @@ this is a made up ip
     - the location where the static files should be sent is the /var/www/html
 - made deploy.sh an executable
  ```bash
-  chmod +x deplay.sh
+  chmod +x deploy.sh
 ```
 
 
