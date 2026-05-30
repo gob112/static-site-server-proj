@@ -1,26 +1,51 @@
-# static-site-server-proj
-This is a beginner project to understand how to set up a server and serve a static site using Nginx
+# Static Site Server Project
 
+## 📌 Project Overview
+This is a beginner-level project designed to learn and practice core DevOps and system administration skills: setting up a Linux server, configuring SSH access, installing and configuring a web server, and automating deployment of static website files.
 
-1. Register and setup a remote linux server on any provider e.g. a simple droplet on DigitalOcean which gives you $200 in free credits with the link. Alternatively, use AWS or any other provider.
+Instead of using a cloud provider like DigitalOcean or AWS, I created a local virtual machine (VM) to simulate a remote server — this approach is completely free, safe, and works exactly the same way as a production cloud server.
 
-    For this i decided to use a VM as a remote linux server.
-    I set up a virtual machine on my local computer and downloaded openssh to allow an ssh connection
+---
 
-2. from my local computer i connected to my server via ssh by using my VM ip address.
+## 🛠️ Technologies Used
+- **Virtualisation**: UTM (to run a Debian Linux virtual machine)
+- **Operating System**: Debian 12 (Linux distribution)
+- **SSH**: OpenSSH Server & Client (secure remote connection)
+- **Web Server**: Nginx (to serve static web content)
+- **File Transfer**: rsync (fast, reliable file synchronization)
 
-3. once i logged in via my local computer i downloaded nginx on my server.
+---
 
-4. created the static files and wrote the command line instructions into the deply,sh, need to make it an executable so changed the mode of the file.
+## 🚀 Step-by-Step Implementation
 
-5. ran ./deploy.sh which moved my static files to my server.
+### 1. Server Setup
+**Objective:** Create and prepare a Linux server environment.
 
+- Instead of using a cloud provider (e.g. DigitalOcean, AWS), I installed **UTM** on my Mac and created a new virtual machine running **Debian Linux**.
+- During installation, I created a standard user account (`tanisha`) and set a password.
+- After installation, I first resolved permission issues by adding my user to the `sudoers` group, so I could run administrative commands.
+- I installed the OpenSSH server package to allow secure remote access:
+  ```bash
+  sudo apt update
+  sudo apt install openssh-server -y
+- i enabled and started the ssh service
+    sudo systemctl enable --now ssh
+- go the servers ip address
 
+### connecting via ssh
+ 
+- ssh [name]@ipaddressofserver
 
+### install nginx and rsync
+ - sudo apt install nginx -y
+ - sudo apt install rsync -y
 
-
-
-
+### create static files and deploy.sh
+- created a css,html and image file to create a simple html page
+- deploy.sh will hold the rsync command to transfer the files to my server
+    - the location where the static files should be sent is the /var/www/html
+- made deploy.sh and executable
+    - chmod +x deplay.sh
 
 
 
