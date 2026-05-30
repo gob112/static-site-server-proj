@@ -33,22 +33,24 @@ Instead of using a cloud provider like DigitalOcean or AWS, I created a local vi
 ```bash
     sudo systemctl enable --now ssh
  ```
-- go the servers ip address
+- got the servers ip address
 
-### connecting via ssh
-    ```bash
+### 2. connecting via ssh
+```bash
     ssh tanisha@192.168.64.2
 ```
-### install nginx and rsync
+this is a made up ip
+
+### 3. install nginx and rsync
 ```bash
  sudo apt install nginx -y
  sudo apt install rsync -y
 ```
-### create static files and deploy.sh
+### 4. create static files and deploy.sh
 - created a css,html and image file to create a simple html page
 - deploy.sh will hold the rsync command to transfer the files to my server
     - the location where the static files should be sent is the /var/www/html
-- made deploy.sh and executable
+- made deploy.sh an executable
  ```bash
   chmod +x deplay.sh
 ```
