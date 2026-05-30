@@ -1,5 +1,7 @@
 # Static Site Server Project
 
+https://roadmap.sh/projects/static-site-server
+
 ## 📌 Project Overview
 This is a beginner-level project designed to learn and practice core DevOps and system administration skills: setting up a Linux server, configuring SSH access, installing and configuring a web server, and automating deployment of static website files.
 
