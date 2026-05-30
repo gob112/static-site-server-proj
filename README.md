@@ -28,24 +28,30 @@ Instead of using a cloud provider like DigitalOcean or AWS, I created a local vi
   ```bash
   sudo apt update
   sudo apt install openssh-server -y
+  ```
 - i enabled and started the ssh service
+```bash
     sudo systemctl enable --now ssh
+ ```
 - go the servers ip address
 
 ### connecting via ssh
- 
-- ssh [name]@ipaddressofserver
-
+    ```bash
+    ssh tanisha@192.168.64.2
+```
 ### install nginx and rsync
- - sudo apt install nginx -y
- - sudo apt install rsync -y
-
+```bash
+ sudo apt install nginx -y
+ sudo apt install rsync -y
+```
 ### create static files and deploy.sh
 - created a css,html and image file to create a simple html page
 - deploy.sh will hold the rsync command to transfer the files to my server
     - the location where the static files should be sent is the /var/www/html
 - made deploy.sh and executable
-    - chmod +x deplay.sh
+ ```bash
+  chmod +x deplay.sh
+```
 
 
 
